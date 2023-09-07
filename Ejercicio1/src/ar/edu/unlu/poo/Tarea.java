@@ -32,7 +32,7 @@ public class Tarea {
         if ( ((this.getFechaRecordatorio()).isAfter(LocalDate.now())) || ((this.getFechaRecordatorio()).isEqual(LocalDate.now())) && this.getEstado().equals(EstadoTarea.INCOMPLETA) ){
             String descripcionNueva = "(por vencer)" + this.getDescripcion();
             this.setDescripcion(descripcionNueva);
-        } else if (((this.getFechaRecordatorio()).isBefore(LocalDate.now())) || ((this.getFechaRecordatorio()).isEqual(LocalDate.now())) ) {
+        } else if (((this.getFechaRecordatorio()).isBefore(LocalDate.now())) || ((this.getFechaRecordatorio()).isEqual(LocalDate.now())) && this.getEstado().equals(EstadoTarea.INCOMPLETA )) {
             this.setPrioridad("Maxima");
         }
     }

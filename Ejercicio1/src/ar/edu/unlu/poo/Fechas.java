@@ -17,7 +17,7 @@ public class Fechas {
         return fecha.isAfter(fechaReferencia);
     }
 
-    public static boolean fechaEsMenor(LocalDate fecha, LocalDate fechaReferencia) {
+    public boolean fechaEsMenor(LocalDate fecha, LocalDate fechaReferencia) {
         return fecha.isBefore(fechaReferencia);
     }
 }

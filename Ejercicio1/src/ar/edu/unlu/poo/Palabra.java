@@ -4,24 +4,28 @@ public class Palabra {
     private String palabra;
     private int puntaje;
 
-    public void setPuntaje(int puntos) {
-        this.puntaje = puntaje;
+
+    public Palabra (String texto){
+        this.setPalabra(texto);
     }
 
     public void setPalabra(String palabra) {
         this.palabra = palabra;
     }
 
-    public int getPuntaje() {
-        return puntaje;
-    }
-
     public String getPalabra() {
         return palabra;
     }
 
-    public int calcular(String texto){
-        this.setPalabra(texto);
+    public void setPuntaje(int puntos) {
+        this.puntaje = puntaje;
+    }
+
+    public int getPuntaje() {
+        return puntaje;
+    }
+
+    public int calcular(){
         char[] caracteres =  (this.getPalabra()).toCharArray();
         char[] puntosBonus = {'k', 'z', 'x', 'y', 'w'};
         int acumulador = caracteres.length;
@@ -33,6 +37,7 @@ public class Palabra {
                 if (letra == verificacion) {acumulador += 1;}
             }
         }
+        setPuntaje(acumulador);
         return acumulador;
     }
 }
